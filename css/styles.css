@@ -27,6 +27,7 @@ h2 {
 button {
   color: white;
   font-size: 1rem;
+  outline: none;
   border: none;
   width: 10rem;
   height: 5rem;
@@ -39,15 +40,13 @@ button {
 }
 
 .general-jokes-button,
-#another-general {
+.tell-me-general,
+.another-general {
   background-color: #dfd7ab;
 }
 
-#another-general {
-  justify-content: center;
-}
-
 .programming-jokes-button,
+.tell-me-programming,
 .another-programming {
   background-color: #74bdcb;
 }
