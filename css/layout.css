@@ -16,6 +16,21 @@
   display: none;
 }
 
+.row {
+  display: flex;
+  margin: 4rem 6%;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-half {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: center;
+}
+
 @media only screen and (min-width: 864px) {
   .row.footer {
     display: none;

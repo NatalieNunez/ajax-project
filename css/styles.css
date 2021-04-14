@@ -39,6 +39,12 @@ button {
   margin: 0 auto;
 }
 
+button:hover {
+  width: 10.5rem;
+  height: 5.5rem;
+  font-size: 1.2rem;
+}
+
 .general-jokes-button,
 .tell-me-general,
 .another-general {
@@ -53,21 +59,6 @@ button {
 
 .fav-joke {
   justify-content: flex-end;
-}
-
-.row {
-  display: flex;
-  margin: 4rem 6%;
-}
-
-.col-full {
-  flex-basis: 100%;
-}
-
-.col-half {
-  display: flex;
-  flex-basis: 50%;
-  justify-content: center;
 }
 
 .footer {
