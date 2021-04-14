@@ -9,11 +9,11 @@ function programmingJokes() {
   xhr.open('GET', 'https://official-joke-api.appspot.com/jokes/programming/random');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    var strJokeProg = JSON.stringify(xhr.response[0].setup);
+    var strJokeProg = xhr.response[0].setup;
     var progJoke = document.createTextNode(strJokeProg);
     $h2ProgrammingSetup.appendChild(progJoke);
 
-    var strPunchlineProg = JSON.stringify(xhr.response[0].punchline);
+    var strPunchlineProg = xhr.response[0].punchline;
     var progPunchline = document.createTextNode(strPunchlineProg);
     $h2ProgrammingPunchline.appendChild(progPunchline);
   });
@@ -25,11 +25,11 @@ function generalJokes() {
   xhr.open('GET', 'https://official-joke-api.appspot.com/random_joke');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    var strJokeGeneral = JSON.stringify(xhr.response.setup);
+    var strJokeGeneral = xhr.response.setup;
     var genJoke = document.createTextNode(strJokeGeneral);
     $h2GeneralSetup.appendChild(genJoke);
 
-    var strPunchlineGeneral = JSON.stringify(xhr.response.punchline);
+    var strPunchlineGeneral = xhr.response.punchline;
     var genPunchline = document.createTextNode(strPunchlineGeneral);
     $h2GeneralPunchline.appendChild(genPunchline);
   });
