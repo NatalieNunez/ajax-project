@@ -14,34 +14,85 @@
 </head>
 <body>
   <div class="container">
-    <header class="home-page">
+    <header class="top-nav">
         <h1>CRACKIN' JOKES</h1>
         <div class="nav">
           <a href="#home">Home</a>
           <a href="#favorites">Favorites</a>
         </div>
     </header>
-    <div class="row">
-      <div class="col-full">
-        <h2>Who would you like to crack a joke to?</h2>
+    <div class="home-page">
+      <div class="row">
+        <div class="col-full">
+          <h2>Who would you like to crack a joke to?</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-half">
+          <button class="general-jokes-button">My Regular Friend</button>
+        </div>
+        <div class="col-half">
+          <button class="programming-jokes-button">My Super Cool Programming Friend</button>
+        </div>
+      </div>
+      <div class="row footer">
+        <div class="col-half">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="col-half">
+          <i class="fas fa-star"></i>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-half">
-        <button class="general-jokes">My Regular Friend</button>
+
+    <div class="general-jokes-setup hidden">
+      <div class="row star">
+        <i class="fas fa-star col-full"></i>
       </div>
-      <div class="col-half">
-        <button class="programming-jokes">My Super Cool Programming Friend</button>
+      <div class="row">
+        <div class="col-full">
+          <h2>Text</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <button class="another-general">Another!</button>
+        </div>
+      </div>
+      <div class="row footer">
+        <div class="col-half">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="col-half">
+          <i class="fas fa-star"></i>
+        </div>
       </div>
     </div>
-    <div class="row footer">
-      <div class="col-half">
-        <i class="fas fa-home"></i>
+
+    <div class="programming-jokes-setup hidden">
+      <div class="row star">
+        <i class="fas fa-star col-full"></i>
       </div>
-      <div class="col-half">
-        <i class="fas fa-star"></i>
+      <div class="row">
+        <div class="col-full">
+          <h2>Text</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <button class="another-programming">Another!</button>
+        </div>
+      </div>
+      <div class="row footer">
+        <div class="col-half">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="col-half">
+          <i class="fas fa-star"></i>
+        </div>
       </div>
     </div>
+
   </div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

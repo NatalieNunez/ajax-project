@@ -2,7 +2,7 @@ body {
   background-color: #f1f1f1;
 }
 
-.home-page {
+.top-nav {
   background-color: #ffc6b4;
   height: 6rem;
 }
@@ -34,12 +34,18 @@ button {
   box-shadow: 0 2px 5px #6d6c6c;
 }
 
-.general-jokes {
+.general-jokes-button,
+.another-general {
   background-color: #dfd7ab;
 }
 
-.programming-jokes {
+.programming-jokes-button,
+.another-programming {
   background-color: #74bdcb;
+}
+
+.fav-joke {
+  justify-content: flex-end;
 }
 
 .row {
