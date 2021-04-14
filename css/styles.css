@@ -4,6 +4,7 @@ body {
 
 .home-page {
   background-color: #ffc6b4;
+  height: 6rem;
 }
 
 h1 {
@@ -11,13 +12,14 @@ h1 {
   font-family: 'PT Mono', monospace;
   text-align: center;
   text-shadow: 0 3px 2px #c79f9f;
-  padding: 2rem 0;
+  padding: 1rem 0;
   font-weight: 100;
 }
 
 h2 {
   font-family: 'Montserrat', sans-serif;
-  margin: 0 20%;
+  margin: 0 auto;
+  max-width: 250px;
   text-align: center;
   font-weight: 100;
 }
@@ -25,9 +27,8 @@ h2 {
 button {
   color: white;
   font-size: 1rem;
-  margin: 0 auto;
   border: none;
-  width: 85%;
+  width: 10rem;
   height: 5rem;
   border-radius: 5rem;
   box-shadow: 0 2px 5px #6d6c6c;
@@ -43,7 +44,7 @@ button {
 
 .row {
   display: flex;
-  margin: 4rem 0;
+  margin: 4rem 6%;
 }
 
 .col-full {
@@ -53,6 +54,7 @@ button {
 .col-half {
   display: flex;
   flex-basis: 50%;
+  justify-content: center;
 }
 
 .footer {

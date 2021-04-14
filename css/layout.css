@@ -7,3 +7,36 @@
   display: flex;
   flex-direction: column;
 }
+
+.nav {
+  display: none;
+}
+
+@media only screen and (min-width: 864px) {
+  .row.footer {
+    display: none;
+  }
+
+  .nav {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    display: inline;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    padding: 1rem;
+  }
+
+  .general-jokes {
+    margin: 0 10% 0 auto;
+  }
+
+  .programming-jokes {
+    margin: 0 auto 0 10%;
+  }
+}
