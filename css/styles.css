@@ -84,6 +84,7 @@ i {
   margin: auto;
   color: #c3c2c2;
   font-size: 1.7rem;
+  cursor: pointer;
 }
 
 i.fa-home {
@@ -94,4 +95,13 @@ i.fa-star {
   margin-left: 3.5rem;
   display: flex;
   justify-content: flex-end;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #ebebeb;
+}
+
+i:hover {
+  color: #a8a8a8;
 }

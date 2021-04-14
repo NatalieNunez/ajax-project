@@ -93,11 +93,11 @@ $anotherProgramming.addEventListener('click', handleClick);
 
 var $navItems = document.querySelector('.nav');
 var $homeLink = document.querySelector('.home');
-// var $favoritesLink = document.querySelector('.favorites');
 
-function linkClicks(event) {
-  // console.log(event.target);
-  if (event.target === $homeLink) {
+var $homeIcon = document.getElementById('home-icon');
+
+function linkAndIconClicks(event) {
+  if (event.target === $homeLink || event.target === $homeIcon) {
     $homePage.classList.remove('hidden');
     $generalSetup.classList.add('hidden');
     $generalPunchline.classList.add('hidden');
@@ -110,4 +110,5 @@ function linkClicks(event) {
   }
 }
 
-$navItems.addEventListener('click', linkClicks);
+$navItems.addEventListener('click', linkAndIconClicks);
+$homeIcon.addEventListener('click', linkAndIconClicks);
