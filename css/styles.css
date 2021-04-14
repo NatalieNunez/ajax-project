@@ -32,11 +32,19 @@ button {
   height: 5rem;
   border-radius: 5rem;
   box-shadow: 0 2px 5px #6d6c6c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .general-jokes-button,
-.another-general {
+#another-general {
   background-color: #dfd7ab;
+}
+
+#another-general {
+  justify-content: center;
 }
 
 .programming-jokes-button,
@@ -84,4 +92,6 @@ i.fa-home {
 
 i.fa-star {
   margin-left: 3.5rem;
+  display: flex;
+  justify-content: flex-end;
 }
