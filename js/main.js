@@ -36,7 +36,7 @@ function generalJokes() {
   xhr.send();
 }
 
-var $homePage = document.querySelector('.home-page');
+var $homePage = document.querySelector('#home-page');
 var $generalSetup = document.querySelector('.general-jokes-setup');
 var $generalPunchline = document.querySelector('.general-jokes-punchline');
 var $programmingSetup = document.querySelector('.programming-jokes-setup');
@@ -90,3 +90,24 @@ $tellMeGeneral.addEventListener('click', handleClick);
 $tellMeProgramming.addEventListener('click', handleClick);
 $anotherGeneral.addEventListener('click', handleClick);
 $anotherProgramming.addEventListener('click', handleClick);
+
+var $navItems = document.querySelector('.nav');
+var $homeLink = document.querySelector('.home');
+// var $favoritesLink = document.querySelector('.favorites');
+
+function linkClicks(event) {
+  // console.log(event.target);
+  if (event.target === $homeLink) {
+    $homePage.classList.remove('hidden');
+    $generalSetup.classList.add('hidden');
+    $generalPunchline.classList.add('hidden');
+    $programmingSetup.classList.add('hidden');
+    $programmingPunchline.classList.add('hidden');
+    $h2GeneralSetup.textContent = '';
+    $h2ProgrammingSetup.textContent = '';
+    $h2GeneralPunchline.textContent = '';
+    $h2ProgrammingPunchline.textContent = '';
+  }
+}
+
+$navItems.addEventListener('click', linkClicks);
