@@ -24,6 +24,16 @@ h2 {
   font-weight: 100;
 }
 
+.jokes-gold {
+  font-family: 'PT Mono', monospace;
+  color: #bdb486;
+}
+
+.jokes-blue {
+  font-family: 'PT Mono', monospace;
+  color: #61a8b6;
+}
+
 button {
   color: white;
   font-size: 1rem;

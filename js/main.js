@@ -10,23 +10,15 @@ function programmingJokes() {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var strJokeProg = JSON.stringify(xhr.response[0].setup);
-    // console.log(strJokeProg);
     var progJoke = document.createTextNode(strJokeProg);
     $h2ProgrammingSetup.appendChild(progJoke);
 
     var strPunchlineProg = JSON.stringify(xhr.response[0].punchline);
     var progPunchline = document.createTextNode(strPunchlineProg);
     $h2ProgrammingPunchline.appendChild(progPunchline);
-
-    // console.log('str response:', xhr.response[0].setup);
-    // console.log('status', xhr.status);
   });
   xhr.send();
 }
-
-// programmingJokes();
-
-// var xhr2 = new XMLHttpRequest();
 
 function generalJokes() {
   var xhr = new XMLHttpRequest();
@@ -34,20 +26,15 @@ function generalJokes() {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var strJokeGeneral = JSON.stringify(xhr.response.setup);
-    // console.log(strJokeGeneral);
     var genJoke = document.createTextNode(strJokeGeneral);
     $h2GeneralSetup.appendChild(genJoke);
 
     var strPunchlineGeneral = JSON.stringify(xhr.response.punchline);
     var genPunchline = document.createTextNode(strPunchlineGeneral);
     $h2GeneralPunchline.appendChild(genPunchline);
-    // console.log('response', xhr.response);
-    // console.log('status 2', xhr.status);
   });
   xhr.send();
 }
-
-// generalJokes();
 
 var $homePage = document.querySelector('.home-page');
 var $generalSetup = document.querySelector('.general-jokes-setup');
@@ -63,7 +50,6 @@ var $anotherGeneral = document.querySelector('.another-general');
 var $anotherProgramming = document.querySelector('.another-programming');
 
 function handleClick(event) {
-  // console.log(event.target);
   if (event.target === $chooseGeneral) {
     $homePage.classList.add('hidden');
     $generalSetup.classList.remove('hidden');
