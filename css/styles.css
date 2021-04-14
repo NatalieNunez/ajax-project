@@ -79,6 +79,11 @@ button:hover {
   margin: 0;
 }
 
+a:hover {
+  cursor: pointer;
+  color: #ebebeb;
+}
+
 i {
   margin: auto;
   color: #c3c2c2;
@@ -94,11 +99,6 @@ i.fa-star {
   margin-left: 3.5rem;
   display: flex;
   justify-content: flex-end;
-}
-
-a:hover {
-  cursor: pointer;
-  color: #ebebeb;
 }
 
 i:hover {

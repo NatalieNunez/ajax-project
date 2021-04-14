@@ -93,7 +93,6 @@ $anotherProgramming.addEventListener('click', handleClick);
 
 var $navItems = document.querySelector('.nav');
 var $homeLink = document.querySelector('.home');
-
 var $homeIcon = document.getElementById('home-icon');
 
 function linkAndIconClicks(event) {
