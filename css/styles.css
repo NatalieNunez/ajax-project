@@ -19,10 +19,26 @@ h2 {
   font-family: 'Montserrat', sans-serif;
   margin: 0 20%;
   text-align: center;
+  font-weight: 100;
 }
 
 button {
-  padding: 5%;
+  color: white;
+  font-size: 1rem;
+  margin: 0 auto;
+  border: none;
+  width: 85%;
+  height: 5rem;
+  border-radius: 5rem;
+  box-shadow: 0 2px 5px #6d6c6c;
+}
+
+.general-jokes {
+  background-color: #dfd7ab;
+}
+
+.programming-jokes {
+  background-color: #74bdcb;
 }
 
 .row {
@@ -35,12 +51,29 @@ button {
 }
 
 .col-half {
+  display: flex;
   flex-basis: 50%;
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
   background-color: white;
-  height: 80px;
+  height: 6rem;
+  width: 100%;
+  margin: 0;
+}
 
-  /* margin-top: 8.3rem; */
+i {
+  margin: auto;
+  color: #c3c2c2;
+  font-size: 1.7rem;
+}
+
+i.fa-home {
+  margin-right: 3.5rem;
+}
+
+i.fa-star {
+  margin-left: 3.5rem;
 }
