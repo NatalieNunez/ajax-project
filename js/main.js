@@ -41,18 +41,14 @@ var $container = document.querySelector('.container');
 
 function getDataForView(dataView) {
   if (dataView === 'general-setup') {
+    $h2GeneralSetup.textContent = '';
     $h2GeneralPunchline.textContent = '';
     generalJokes();
   }
-  if (dataView === 'general-punchline') {
-    $h2GeneralSetup.textContent = '';
-  }
   if (dataView === 'programming-setup') {
+    $h2ProgrammingSetup.textContent = '';
     $h2ProgrammingPunchline.textContent = '';
     programmingJokes();
-  }
-  if (dataView === 'programming-punchline') {
-    $h2ProgrammingSetup.textContent = '';
   }
 }
 
@@ -87,8 +83,8 @@ function clickFavorites(event) {
     }
   }
   for (var k = 0; k < $h2Elements.length; k++) {
-    var id = $h2Elements[k].id;
-    if (id === event.target.dataset.joke) {
+    var h2Data = $h2Elements[k].dataset.joke;
+    if (h2Data === event.target.dataset.joke) {
       // console.log($h2Elements[k].textContent);
     }
   }
