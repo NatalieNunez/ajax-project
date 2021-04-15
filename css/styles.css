@@ -1,0 +1,106 @@
+body {
+  background-color: #f1f1f1;
+}
+
+.top-nav {
+  background-color: #ffc6b4;
+}
+
+h1 {
+  color: white;
+  font-family: 'PT Mono', monospace;
+  text-align: center;
+  text-shadow: 0 3px 2px #c79f9f;
+  padding: 1rem 0;
+  font-weight: 100;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  max-width: 250px;
+  text-align: center;
+  font-weight: 100;
+}
+
+.jokes-gold {
+  font-family: 'PT Mono', monospace;
+  color: #bdb486;
+}
+
+.jokes-blue {
+  font-family: 'PT Mono', monospace;
+  color: #61a8b6;
+}
+
+button {
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  width: 10rem;
+  height: 5rem;
+  border-radius: 5rem;
+  box-shadow: 0 2px 5px #6d6c6c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+button:hover {
+  width: 10.5rem;
+  height: 5.5rem;
+  font-size: 1.2rem;
+}
+
+.general-jokes-button,
+.tell-me-general,
+.another-general {
+  background-color: #dfd7ab;
+}
+
+.programming-jokes-button,
+.tell-me-programming,
+.another-programming {
+  background-color: #74bdcb;
+}
+
+.fav-joke {
+  justify-content: flex-end;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  height: 6rem;
+  width: 100%;
+  margin: 0;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #ebebeb;
+}
+
+i {
+  margin: auto;
+  color: #c3c2c2;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+i.fa-home {
+  margin-right: 3.5rem;
+}
+
+i.fa-star {
+  margin-left: 3.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+i:hover {
+  color: #a8a8a8;
+}

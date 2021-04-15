@@ -5,15 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
   <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
-  <header>
-  </header>
-  <main>
-  </main>
+  <div class="container">
+    <header class="top-nav">
+        <h1>CRACKIN' JOKES</h1>
+        <div class="nav">
+          <a class="home" data-view="home-page">Home</a>
+          <a class="favorites">Favorites</a>
+        </div>
+    </header>
+    <div id="home-page" class="view" data-view="home-page">
+      <div class="row">
+        <div class="col-full">
+          <h2>Who would you like to crack a joke to?</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-half">
+          <button class="general-jokes-button btn" data-view="general-setup">My Regular Friend</button>
+        </div>
+        <div class="col-half">
+          <button class="programming-jokes-button btn" data-view="programming-setup">My Super Cool Programming Friend</button>
+        </div>
+      </div>
+    </div>
+    <div class="row footer">
+      <div class="col-half">
+        <i class="fas fa-home" id="home-icon" data-view="home-page"></i>
+      </div>
+      <div class="col-half">
+        <i class="fas fa-star" id="star-icon"></i>
+      </div>
+    </div>
+
+    <div id="general-jokes-setup" class="hidden view" data-view="general-setup">
+      <div class="row star">
+        <i class="fas fa-star col-full"></i>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <h2 id="append-gen-joke" class="jokes-gold"></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <button class="tell-me-general btn" data-view="general-punchline">Tell Me</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="general-jokes-punchline" class="hidden view" data-view="general-punchline">
+      <div class="row star">
+        <i class="fas fa-star col-full"></i>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <h2 id="append-gen-punchline" class="jokes-gold"></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <button class="another-general btn" data-view="general-setup">Another!</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="programming-jokes-setup" class="hidden view" data-view="programming-setup">
+      <div class="row star">
+        <i class="fas fa-star col-full"></i>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <h2 id="append-prog-joke" class="jokes-blue"></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <button class="tell-me-programming btn" data-view="programming-punchline">Tell Me</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="programming-jokes-punchline" class="hidden view" data-view="programming-punchline">
+      <div class="row star">
+        <i class="fas fa-star col-full"></i>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <h2 id="append-prog-punchline" class="jokes-blue"></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-full">
+          <button class="another-programming btn" data-view="programming-setup">Another!</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>

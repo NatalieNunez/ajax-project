@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.nav {
+  display: none;
+}
+
+.row {
+  display: flex;
+  margin: 4rem 6%;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-half {
+  display: flex;
+  flex-basis: 50%;
+}
+
+@media only screen and (min-width: 864px) {
+  .row.footer {
+    display: none;
+  }
+
+  .nav {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    display: inline;
+  }
+
+  a {
+    color: white;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    padding: 1rem;
+  }
+
+  .general-jokes-button {
+    margin: 0 10% 0 auto;
+  }
+
+  .programming-jokes-button {
+    margin: 0 auto 0 10%;
+  }
+}
