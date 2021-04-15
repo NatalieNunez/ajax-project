@@ -2,7 +2,6 @@
 
 var data = {
   favJoke: [{
-    type: '',
     setup: '',
     punchline: ''
   }]

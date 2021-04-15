@@ -74,6 +74,8 @@ function buttonClicks(event) {
 }
 
 var $favStars = document.querySelectorAll('.favs');
+var $h2Elements = document.querySelectorAll('.text');
+// console.log('h2s:', $h2Elements);
 
 function clickFavorites(event) {
   if (!event.target.classList.contains('favs')) {
@@ -82,6 +84,12 @@ function clickFavorites(event) {
   for (var i = 0; i < $favStars.length; i++) {
     if ($favStars[i] === event.target) {
       event.target.classList.toggle('gold-star');
+    }
+  }
+  for (var k = 0; k < $h2Elements.length; k++) {
+    var id = $h2Elements[k].id;
+    if (id === event.target.dataset.joke) {
+      // console.log($h2Elements[k].textContent);
     }
   }
 }
