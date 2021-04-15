@@ -57,6 +57,9 @@ function getDataForView(dataView) {
 }
 
 function buttonClicks(event) {
+  if (event.target.classList.contains('favs')) {
+    return;
+  }
   var currentButton = event.target.dataset.view;
   for (var i = 0; i < $views.length; i++) {
     var viewDataSet = $views[i].dataset.view;
@@ -70,4 +73,18 @@ function buttonClicks(event) {
   getDataForView(currentView);
 }
 
+var $favStars = document.querySelectorAll('.favs');
+
+function clickFavorites(event) {
+  if (!event.target.classList.contains('favs')) {
+    return;
+  }
+  for (var i = 0; i < $favStars.length; i++) {
+    if ($favStars[i] === event.target) {
+      event.target.classList.toggle('gold-star');
+    }
+  }
+}
+
 $container.addEventListener('click', buttonClicks);
+$container.addEventListener('click', clickFavorites);
