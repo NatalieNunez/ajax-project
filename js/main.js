@@ -37,10 +37,10 @@ function generalJokes() {
 }
 
 var $homePage = document.querySelector('#home-page');
-var $generalSetup = document.querySelector('.general-jokes-setup');
-var $generalPunchline = document.querySelector('.general-jokes-punchline');
-var $programmingSetup = document.querySelector('.programming-jokes-setup');
-var $programmingPunchline = document.querySelector('.programming-jokes-punchline');
+var $generalSetup = document.querySelector('#general-jokes-setup');
+var $generalPunchline = document.querySelector('#general-jokes-punchline');
+var $programmingSetup = document.querySelector('#programming-jokes-setup');
+var $programmingPunchline = document.querySelector('#programming-jokes-punchline');
 
 var $chooseGeneral = document.querySelector('.general-jokes-button');
 var $chooseProgramming = document.querySelector('.programming-jokes-button');
@@ -111,3 +111,35 @@ function linkAndIconClicks(event) {
 
 $navItems.addEventListener('click', linkAndIconClicks);
 $homeIcon.addEventListener('click', linkAndIconClicks);
+
+// give all views a class and put them into a nodelist
+// give all buttons a class and put them into a nodelist
+// give buttons a dataset that matches views id
+// loop through buttons, check each's dataset value
+// loop through views, check if dataset value of button is equal to id value
+// if theyre equal, add a class hidden to the view with that id
+
+// var $views = document.querySelectorAll('.view');
+// // console.log('views nodelist:', $views);
+// var $buttons = document.querySelectorAll('.btn');
+// // console.log('buttons nodelist:', $buttons);
+// var $container = document.querySelector('.container');
+
+// function click(event) {
+//   for (var i = 0; i < $buttons.length; i++) {
+//     var buttonDataSet = $buttons[i].dataset.view;
+//     // console.log('buttons dataset values:', buttonDataSet);
+//     for (var k = 0; k < $views.length; k++) {
+//       if ($views[k].id === buttonDataSet) {
+//         $views[k].classList.add('hidden');
+//       }
+//     }
+//   }
+// }
+
+// $container.addEventListener('click', click);
+
+// give each view a dataset that matches the button you need to click to get there
+// loop through buttons to find dataset value
+// loop through views to find dataset value
+// if views' dataset value matches the buttons dataset value, remove class hidden from the view;

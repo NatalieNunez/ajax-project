@@ -21,7 +21,7 @@
           <a class="favorites">Favorites</a>
         </div>
     </header>
-    <div id="home-page">
+    <div id="home-page" class="view">
       <div class="row">
         <div class="col-full">
           <h2>Who would you like to crack a joke to?</h2>
@@ -29,10 +29,10 @@
       </div>
       <div class="row">
         <div class="col-half">
-          <button class="general-jokes-button">My Regular Friend</button>
+          <button class="general-jokes-button btn" data-view="home-page">My Regular Friend</button>
         </div>
         <div class="col-half">
-          <button class="programming-jokes-button">My Super Cool Programming Friend</button>
+          <button class="programming-jokes-button btn" data-view="home-page">My Super Cool Programming Friend</button>
         </div>
       </div>
     </div>
@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div class="general-jokes-setup hidden">
+    <div id="general-jokes-setup" class="hidden view" data-view="home-page">
       <div class="row star">
         <i class="fas fa-star col-full"></i>
       </div>
@@ -56,12 +56,12 @@
       </div>
       <div class="row">
         <div class="col-full">
-          <button class="tell-me-general">Tell Me</button>
+          <button class="tell-me-general btn" data-view="general-jokes-setup">Tell Me</button>
         </div>
       </div>
     </div>
 
-    <div class="general-jokes-punchline hidden">
+    <div id="general-jokes-punchline" class="hidden view" data-view="general-jokes-setup">
       <div class="row star">
         <i class="fas fa-star col-full"></i>
       </div>
@@ -72,12 +72,12 @@
       </div>
       <div class="row">
         <div class="col-full">
-          <button class="another-general">Another!</button>
+          <button class="another-general btn" data-view="general-jokes-punchline">Another!</button>
         </div>
       </div>
     </div>
 
-    <div class="programming-jokes-setup hidden">
+    <div id="programming-jokes-setup" class="hidden view" data-view="home-page">
       <div class="row star">
         <i class="fas fa-star col-full"></i>
       </div>
@@ -88,12 +88,12 @@
       </div>
       <div class="row">
         <div class="col-full">
-          <button class="tell-me-programming">Tell Me</button>
+          <button class="tell-me-programming btn" data-view="programming-jokes-setup">Tell Me</button>
         </div>
       </div>
     </div>
 
-    <div class="programming-jokes-punchline hidden">
+    <div id="programming-jokes-punchline" class="hidden view" data-view="programming-jokes-setup">
       <div class="row star">
         <i class="fas fa-star col-full"></i>
       </div>
@@ -104,7 +104,7 @@
       </div>
       <div class="row">
         <div class="col-full">
-          <button class="another-programming">Another!</button>
+          <button class="another-programming btn" data-view="programming-jokes-punchline">Another!</button>
         </div>
       </div>
     </div>
