@@ -38,6 +38,7 @@ function generalJokes() {
 
 var $views = document.querySelectorAll('.view');
 var $container = document.querySelector('.container');
+
 var $genStar = document.getElementById('gen-star');
 var $progStar = document.getElementById('prog-star');
 var $genStar2 = document.getElementById('gen-star-2');
@@ -64,6 +65,7 @@ function buttonClicks(event) {
   if (event.target.classList.contains('favs')) {
     return;
   }
+
   var currentButton = event.target.dataset.view;
   for (var i = 0; i < $views.length; i++) {
     var viewDataSet = $views[i].dataset.view;
@@ -74,12 +76,11 @@ function buttonClicks(event) {
       $views[i].classList.add('hidden');
     }
   }
+
   getDataForView(currentView);
 }
 
-// var $favStars = document.querySelectorAll('.favs');
 var $h2Elements = document.querySelectorAll('.text');
-// console.log('h2s:', $h2Elements);
 
 function clickFavorites(event) {
   if (!event.target.classList.contains('favs')) {
@@ -102,12 +103,14 @@ function addJokeData(event) {
   }
 
   for (var k = 0; k < $h2Elements.length; k++) {
-    if (event.target.dataset.joke === $h2ProgrammingSetup.dataset.joke || event.target.dataset.joke === $h2ProgrammingPunchline.dataset.joke) {
+    if (event.target.dataset.joke === $h2ProgrammingSetup.dataset.joke ||
+      event.target.dataset.joke === $h2ProgrammingPunchline.dataset.joke) {
       var pSetup = $h2ProgrammingSetup.textContent;
       var pPunchline = $h2ProgrammingPunchline.textContent;
       var jokeData = pSetup + ' ' + pPunchline;
     }
-    if (event.target.dataset.joke === $h2GeneralSetup.dataset.joke || event.target.dataset.joke === $h2GeneralPunchline.dataset.joke) {
+    if (event.target.dataset.joke === $h2GeneralSetup.dataset.joke ||
+      event.target.dataset.joke === $h2GeneralPunchline.dataset.joke) {
       var gSetup = $h2GeneralSetup.textContent;
       var gPunchline = $h2GeneralPunchline.textContent;
       jokeData = gSetup + ' ' + gPunchline;
@@ -116,10 +119,8 @@ function addJokeData(event) {
 
   if (event.target.classList.contains('gold-star')) {
     data.favJoke.unshift({ jokeData });
-    // console.log('data model after adding data:', data);
   } else {
     data.favJoke.shift();
-    // console.log('data model after removing data:', data);
   }
 }
 
