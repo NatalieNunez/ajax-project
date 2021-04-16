@@ -126,7 +126,3 @@ function addJokeData(event) {
 $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
 $container.addEventListener('click', addJokeData);
-
-// if a star is clicked and has a class of gold-star, unshift jokeData into data model
-// if star is clicked and doesnt have a class of gold star, remove jokeData (or index 0) from data model
-// NOTE: we are able to add and remove data but so far only the punchline, need to figure out how to get both pieces of data
