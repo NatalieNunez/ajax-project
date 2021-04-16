@@ -49,8 +49,8 @@ button {
 }
 
 button:hover {
-  width: 10.5rem;
-  height: 5.5rem;
+  width: 10.2rem;
+  height: 5.2rem;
   font-size: 1.2rem;
 }
 
@@ -103,4 +103,12 @@ i.fa-star {
 
 i:hover {
   color: #a8a8a8;
+}
+
+.gold-star {
+  color: #e2cf71;
+}
+
+.gold-star:hover {
+  color: #e9d885;
 }

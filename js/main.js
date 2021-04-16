@@ -39,24 +39,33 @@ function generalJokes() {
 var $views = document.querySelectorAll('.view');
 var $container = document.querySelector('.container');
 
+var $genStar = document.getElementById('gen-star');
+var $progStar = document.getElementById('prog-star');
+var $genStar2 = document.getElementById('gen-star-2');
+var $progStar2 = document.getElementById('prog-star-2');
+
 function getDataForView(dataView) {
   if (dataView === 'general-setup') {
+    $genStar.classList.remove('gold-star');
+    $genStar2.classList.remove('gold-star');
+    $h2GeneralSetup.textContent = '';
     $h2GeneralPunchline.textContent = '';
     generalJokes();
   }
-  if (dataView === 'general-punchline') {
-    $h2GeneralSetup.textContent = '';
-  }
   if (dataView === 'programming-setup') {
+    $progStar.classList.remove('gold-star');
+    $progStar2.classList.remove('gold-star');
+    $h2ProgrammingSetup.textContent = '';
     $h2ProgrammingPunchline.textContent = '';
     programmingJokes();
-  }
-  if (dataView === 'programming-punchline') {
-    $h2ProgrammingSetup.textContent = '';
   }
 }
 
 function buttonClicks(event) {
+  if (event.target.classList.contains('favs')) {
+    return;
+  }
+
   var currentButton = event.target.dataset.view;
   for (var i = 0; i < $views.length; i++) {
     var viewDataSet = $views[i].dataset.view;
@@ -67,7 +76,54 @@ function buttonClicks(event) {
       $views[i].classList.add('hidden');
     }
   }
+
   getDataForView(currentView);
 }
 
+var $h2Elements = document.querySelectorAll('.text');
+
+function clickFavorites(event) {
+  if (!event.target.classList.contains('favs')) {
+    return;
+  }
+
+  if (event.target === $genStar || event.target === $genStar2) {
+    $genStar.classList.toggle('gold-star');
+    $genStar2.classList.toggle('gold-star');
+  }
+  if (event.target === $progStar || event.target === $progStar2) {
+    $progStar.classList.toggle('gold-star');
+    $progStar2.classList.toggle('gold-star');
+  }
+}
+
+function addJokeData(event) {
+  if (!event.target.classList.contains('favs')) {
+    return;
+  }
+
+  for (var k = 0; k < $h2Elements.length; k++) {
+    if (event.target.dataset.joke === $h2ProgrammingSetup.dataset.joke ||
+      event.target.dataset.joke === $h2ProgrammingPunchline.dataset.joke) {
+      var pSetup = $h2ProgrammingSetup.textContent;
+      var pPunchline = $h2ProgrammingPunchline.textContent;
+      var jokeData = pSetup + ' ' + pPunchline;
+    }
+    if (event.target.dataset.joke === $h2GeneralSetup.dataset.joke ||
+      event.target.dataset.joke === $h2GeneralPunchline.dataset.joke) {
+      var gSetup = $h2GeneralSetup.textContent;
+      var gPunchline = $h2GeneralPunchline.textContent;
+      jokeData = gSetup + ' ' + gPunchline;
+    }
+  }
+
+  if (event.target.classList.contains('gold-star')) {
+    data.favJoke.unshift({ jokeData });
+  } else {
+    data.favJoke.shift();
+  }
+}
+
 $container.addEventListener('click', buttonClicks);
+$container.addEventListener('click', clickFavorites);
+$container.addEventListener('click', addJokeData);
