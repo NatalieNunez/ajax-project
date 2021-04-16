@@ -133,9 +133,23 @@ function addJokeData(event) {
 
   if (event.target.classList.contains('gold-star')) {
     data.favJoke.unshift({ jokeData });
+    renderJokes(jokeData);
   } else {
     data.favJoke.shift();
+    $divAppendJokes.removeChild($divAppendJokes.childNodes[0]);
   }
+}
+
+var $divAppendJokes = document.getElementById('append-saved-jokes');
+
+function renderJokes(joke) {
+  var h5 = document.createElement('h5');
+  var icon = document.createElement('i');
+  icon.classList.add('fas', 'fa-star', 'likes');
+  var jokeText = document.createTextNode(joke);
+  h5.appendChild(jokeText);
+  h5.appendChild(icon);
+  $divAppendJokes.prepend(h5);
 }
 
 $container.addEventListener('click', buttonClicks);
