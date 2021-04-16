@@ -39,6 +39,8 @@ function generalJokes() {
 
 var $views = document.querySelectorAll('.view');
 var $container = document.querySelector('.container');
+var $mainHead = document.getElementById('main-header');
+var $favHead = document.getElementById('fav-header');
 
 var $genStar = document.getElementById('gen-star');
 var $progStar = document.getElementById('prog-star');
@@ -59,6 +61,14 @@ function getDataForView(dataView) {
     $h2ProgrammingSetup.textContent = '';
     $h2ProgrammingPunchline.textContent = '';
     programmingJokes();
+  }
+  if (dataView === 'favorites-page') {
+    $mainHead.classList.add('hidden');
+    $favHead.classList.remove('hidden');
+  }
+  if (dataView === 'home-page') {
+    $mainHead.classList.remove('hidden');
+    $favHead.classList.add('hidden');
   }
 }
 

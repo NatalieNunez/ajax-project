@@ -15,14 +15,14 @@
 <body>
   <div class="container">
     <header class="top-nav">
-        <h1 class="hidden">CRACKIN' JOKES</h1>
-        <h1 class="">FAVORITE JOKES</h1>
+        <h1 class="" id="main-header">CRACKIN' JOKES</h1>
+        <h1 class="hidden" id="fav-header">FAVORITE JOKES</h1>
         <div class="nav hidden">
           <a class="home" data-view="home-page">Home</a>
-          <a class="favorites">Favorites</a>
+          <a class="favorites" data-view="favorites-page">Favorites</a>
         </div>
     </header>
-    <div id="home-page" class="hidden view" data-view="home-page">
+    <div id="home-page" class="view" data-view="home-page">
       <div class="row">
         <div class="col-full">
           <h2>Who would you like to crack a joke to?</h2>
@@ -42,7 +42,7 @@
         <i class="fas fa-home" id="home-icon" data-view="home-page"></i>
       </div>
       <div class="col-half">
-        <i class="fas fa-star" id="star-icon"></i>
+        <i class="fas fa-star" id="star-icon" data-view="favorites-page"></i>
       </div>
     </div>
 
@@ -110,7 +110,7 @@
       </div>
     </div>
 
-    <div id="favorites-page" class="view" data-view="favorites-page">
+    <div id="favorites-page" class="hidden view" data-view="favorites-page">
       <div class="row-fav">
         <div class="col-full">
           <input style="font-family: 'Font Awesome 5 Free', sans-serif;" type="search" id="search" name="search" placeholder="&#xf002 Search">
