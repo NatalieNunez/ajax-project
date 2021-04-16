@@ -3,6 +3,7 @@ var $h2GeneralPunchline = document.getElementById('append-gen-punchline');
 
 var $h2ProgrammingSetup = document.getElementById('append-prog-joke');
 var $h2ProgrammingPunchline = document.getElementById('append-prog-punchline');
+var $search = document.getElementById('search');
 
 function programmingJokes() {
   var xhr = new XMLHttpRequest();
@@ -62,7 +63,10 @@ function getDataForView(dataView) {
 }
 
 function buttonClicks(event) {
-  if (event.target.classList.contains('favs')) {
+  if (event.target.classList.contains('favs') || event.target === $search) {
+    return;
+  }
+  if (event.target.classList.contains('likes')) {
     return;
   }
 

@@ -15,13 +15,14 @@
 <body>
   <div class="container">
     <header class="top-nav">
-        <h1>CRACKIN' JOKES</h1>
-        <div class="nav">
+        <h1 class="hidden">CRACKIN' JOKES</h1>
+        <h1 class="">FAVORITE JOKES</h1>
+        <div class="nav hidden">
           <a class="home" data-view="home-page">Home</a>
           <a class="favorites">Favorites</a>
         </div>
     </header>
-    <div id="home-page" class="view" data-view="home-page">
+    <div id="home-page" class="hidden view" data-view="home-page">
       <div class="row">
         <div class="col-full">
           <h2>Who would you like to crack a joke to?</h2>
@@ -109,6 +110,24 @@
       </div>
     </div>
 
+    <div id="favorites-page" class="view" data-view="favorites-page">
+      <div class="row-fav">
+        <div class="col-full">
+          <input type="search" id="search" name="search" placeholder="Search">
+        </div>
+      </div>
+      <div class="row-fav">
+        <div class="col-full saved-jokes">
+          <div id="append-saved-jokes">
+            <h5>My older brother always tore the last pages of my comic books, and never told me why. I had to draw my own
+              conclusions.<i class="fas fa-star likes"></i></h5>
+            <hr>
+            <h5>How many programmers does it take to change a lightbulb? None that's a hardware problem<i class="fas fa-star likes"></i></h5>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

@@ -23,6 +23,17 @@ h2 {
   font-weight: 100;
 }
 
+h5 {
+  font-family: sans-serif;
+  font-weight: 300;
+  margin: 1rem 1.5rem;
+}
+
+hr {
+  margin: 0 0.5rem;
+  border: 1px solid #d8d8d8;
+}
+
 .jokes-gold {
   font-family: 'PT Mono', monospace;
   color: #bdb486;
@@ -111,4 +122,17 @@ i:hover {
 
 .gold-star:hover {
   color: #e9d885;
+}
+
+.likes {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1rem;
+  color: #e2cf71;
+}
+
+.saved-jokes {
+  height: 27rem;
+  background-color: white;
+  padding: 1rem 0;
 }
