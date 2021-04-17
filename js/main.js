@@ -133,7 +133,7 @@ function addJokeData(event) {
 
   if (event.target.classList.contains('gold-star')) {
     data.favJoke.unshift({ jokeData });
-    renderJokes(jokeData);
+    renderJoke(jokeData);
   } else {
     data.favJoke.shift();
     $divAppendJokes.removeChild($divAppendJokes.childNodes[0]);
@@ -142,7 +142,7 @@ function addJokeData(event) {
 
 var $divAppendJokes = document.getElementById('append-saved-jokes');
 
-function renderJokes(joke) {
+function renderJoke(joke) {
   var h5 = document.createElement('h5');
   var icon = document.createElement('i');
   icon.classList.add('fas', 'fa-star', 'likes');
@@ -152,6 +152,15 @@ function renderJokes(joke) {
   $divAppendJokes.prepend(h5);
 }
 
+// function renderAllJokes(jokes) {
+//   for (var i = 0; i < jokes.length; i++) {
+//     var renderJoke = renderJoke(jokes[i]);
+//     $divAppendJokes.appendChild(renderJoke);
+//   }
+// }
+
 $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
 $container.addEventListener('click', addJokeData);
+
+// window.addEventListener('DOMContentLoaded', renderAllJokes(data.favJoke));
