@@ -150,17 +150,18 @@ function renderJoke(joke) {
   h5.appendChild(jokeText);
   h5.appendChild(icon);
   $divAppendJokes.prepend(h5);
+  return h5;
 }
 
-// function renderAllJokes(jokes) {
-//   for (var i = 0; i < jokes.length; i++) {
-//     var renderJoke = renderJoke(jokes[i]);
-//     $divAppendJokes.appendChild(renderJoke);
-//   }
-// }
+function renderAllJokes(jokes) {
+  for (var i = 0; i < jokes.length; i++) {
+    var addJoke = renderJoke(jokes[i].jokeData);
+    $divAppendJokes.appendChild(addJoke);
+  }
+}
 
 $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
 $container.addEventListener('click', addJokeData);
 
-// window.addEventListener('DOMContentLoaded', renderAllJokes(data.favJoke));
+window.addEventListener('DOMContentLoaded', renderAllJokes(data.favJoke));
