@@ -3,6 +3,7 @@ var $h2GeneralPunchline = document.getElementById('append-gen-punchline');
 
 var $h2ProgrammingSetup = document.getElementById('append-prog-joke');
 var $h2ProgrammingPunchline = document.getElementById('append-prog-punchline');
+var $search = document.getElementById('search');
 
 function programmingJokes() {
   var xhr = new XMLHttpRequest();
@@ -38,6 +39,8 @@ function generalJokes() {
 
 var $views = document.querySelectorAll('.view');
 var $container = document.querySelector('.container');
+var $mainHead = document.getElementById('main-header');
+var $favHead = document.getElementById('fav-header');
 
 var $genStar = document.getElementById('gen-star');
 var $progStar = document.getElementById('prog-star');
@@ -59,10 +62,21 @@ function getDataForView(dataView) {
     $h2ProgrammingPunchline.textContent = '';
     programmingJokes();
   }
+  if (dataView === 'favorites-page') {
+    $mainHead.classList.add('hidden');
+    $favHead.classList.remove('hidden');
+  }
+  if (dataView === 'home-page') {
+    $mainHead.classList.remove('hidden');
+    $favHead.classList.add('hidden');
+  }
 }
 
 function buttonClicks(event) {
-  if (event.target.classList.contains('favs')) {
+  if (event.target.classList.contains('favs') || event.target === $search) {
+    return;
+  }
+  if (event.target.classList.contains('likes')) {
     return;
   }
 
@@ -119,11 +133,35 @@ function addJokeData(event) {
 
   if (event.target.classList.contains('gold-star')) {
     data.favJoke.unshift({ jokeData });
+    renderJoke(jokeData);
   } else {
     data.favJoke.shift();
+    $divAppendJokes.removeChild($divAppendJokes.childNodes[0]);
+  }
+}
+
+var $divAppendJokes = document.getElementById('append-saved-jokes');
+
+function renderJoke(joke) {
+  var h5 = document.createElement('h5');
+  var icon = document.createElement('i');
+  icon.classList.add('fas', 'fa-star', 'likes');
+  var jokeText = document.createTextNode(joke);
+  h5.appendChild(jokeText);
+  h5.appendChild(icon);
+  $divAppendJokes.prepend(h5);
+  return h5;
+}
+
+function renderAllJokes(jokes) {
+  for (var i = 0; i < jokes.length; i++) {
+    var addJoke = renderJoke(jokes[i].jokeData);
+    $divAppendJokes.appendChild(addJoke);
   }
 }
 
 $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
 $container.addEventListener('click', addJokeData);
+
+window.addEventListener('DOMContentLoaded', renderAllJokes(data.favJoke));
