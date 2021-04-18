@@ -166,6 +166,7 @@ function renderAllJokes(jokes) {
     for (var i = 0; i < $likes.length; i++) {
       if (event.target === $likes[i]) {
         $h5[i].remove();
+        data.favJoke.splice(i, 1);
       }
     }
   }
