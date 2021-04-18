@@ -46,6 +46,8 @@ var $genStar = document.getElementById('gen-star');
 var $progStar = document.getElementById('prog-star');
 var $genStar2 = document.getElementById('gen-star-2');
 var $progStar2 = document.getElementById('prog-star-2');
+// var $likedJokes = document.querySelectorAll('.likes');
+// console.log($likedJokes);
 
 function getDataForView(dataView) {
   if (dataView === 'general-setup') {
@@ -158,6 +160,16 @@ function renderAllJokes(jokes) {
     var addJoke = renderJoke(jokes[i].jokeData);
     $divAppendJokes.appendChild(addJoke);
   }
+  var $h5 = document.querySelectorAll('h5');
+  var $likes = document.querySelectorAll('.likes');
+  function clickUnfavorite(event) {
+    for (var i = 0; i < $likes.length; i++) {
+      if (event.target === $likes[i]) {
+        $h5[i].remove();
+      }
+    }
+  }
+  $divAppendJokes.addEventListener('click', clickUnfavorite);
 }
 
 $container.addEventListener('click', buttonClicks);
