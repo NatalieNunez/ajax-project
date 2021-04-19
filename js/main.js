@@ -159,6 +159,17 @@ function renderAllJokes(jokes) {
     $divAppendJokes.appendChild(addJoke);
   }
 }
+function clickUnfavorite(event) {
+  var $h5 = document.querySelectorAll('h5');
+  var $likes = document.querySelectorAll('.likes');
+  for (var i = 0; i < $likes.length; i++) {
+    if (event.target === $likes[i]) {
+      $h5[i].remove();
+      data.favJoke.splice(i, 1);
+    }
+  }
+}
+$divAppendJokes.addEventListener('click', clickUnfavorite);
 
 $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
