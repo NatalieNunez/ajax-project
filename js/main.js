@@ -169,8 +169,14 @@ function clickUnfavorite(event) {
     }
   }
 }
-$divAppendJokes.addEventListener('click', clickUnfavorite);
 
+function handleInput(event) {
+  // console.log(event.target.value);
+}
+
+$search.addEventListener('input', handleInput);
+
+$divAppendJokes.addEventListener('click', clickUnfavorite);
 $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
 $container.addEventListener('click', addJokeData);
