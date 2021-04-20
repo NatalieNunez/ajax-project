@@ -147,3 +147,7 @@ i:hover {
 #search::placeholder {
   color: #a8a8a8;
 }
+
+.searched-joke {
+  background-color: #c79f9f;
+}
