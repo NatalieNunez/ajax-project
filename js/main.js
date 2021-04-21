@@ -153,12 +153,12 @@ function renderJoke(joke) {
   return h5;
 }
 
-function renderAllJokes(jokes) {
-  for (var i = 0; i < jokes.length; i++) {
-    var addJoke = renderJoke(jokes[i].jokeData);
-    $divAppendJokes.appendChild(addJoke);
-  }
-}
+// function renderAllJokes(jokes) {
+//   for (var i = 0; i < jokes.length; i++) {
+//     var addJoke = renderJoke(jokes[i].jokeData);
+//     $divAppendJokes.appendChild(addJoke);
+//   }
+// }
 
 function clickUnfavorite(event) {
   var $h5 = document.querySelectorAll('h5');
@@ -172,33 +172,28 @@ function clickUnfavorite(event) {
 }
 
 // function handleInput(event) {
-//   console.log(event.target.value);
-//   return event.target.value;
-// }
-
-// function checkValue(input) {
-//   for (var i = 0; i < data.favJoke; i++) {
-//     if (data.favJoke[i].jokeData.includes(input)) {
-//       console.log('joke text:', data.favJoke[i].jokeData);
+//   // console.log('event target value:', event.target.value);
+//   var $h5 = document.querySelectorAll('h5');
+//   for (var i = 0; i < $h5.length; i++) {
+//     // console.log('inner text:', $h5[i].innerText);
+//     if ($h5[i].innerText.includes(event.target.value)) {
+//       // console.log('text contains input value:', $h5[i]);
+//       $h5[i].classList.add('searched-joke');
+//     } else {
+//       $h5[i].classList.remove('searched-joke');
+//     }
+//     if (event.target.value === ' ' || event.target.value === '') {
+//       $h5[i].classList.remove('searched-joke');
 //     }
 //   }
 // }
 
-// checkValue(handleInput);
-
 function handleInput(event) {
-  // console.log('event target value:', event.target.value);
-  var $h5 = document.querySelectorAll('h5');
-  for (var i = 0; i < $h5.length; i++) {
-    if (event.target.value === ' ' || event.target.value === '') {
-      $h5[i].classList.remove('searched-joke');
-    }
-    // console.log('inner text:', $h5[i].innerText);
-    if ($h5[i].innerText.includes(event.target.value)) {
-      // console.log('text contains input value:', $h5[i]);
-      $h5[i].classList.add('searched-joke');
-    } else {
-      $h5[i].classList.remove('searched-joke');
+  // console.log(event.target.value);
+  // debugger;
+  for (var i = 0; i < data.favJoke.length; i++) {
+    if (data.favJoke[i].jokeData.includes(event.target.value)) {
+      renderJoke(data.favJoke[i].jokeData);
     }
   }
 }
@@ -210,4 +205,4 @@ $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
 $container.addEventListener('click', addJokeData);
 
-window.addEventListener('DOMContentLoaded', renderAllJokes(data.favJoke));
+// window.addEventListener('DOMContentLoaded', renderAllJokes(data.favJoke));
