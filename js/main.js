@@ -153,12 +153,12 @@ function renderJoke(joke) {
   return h5;
 }
 
-// function renderAllJokes(jokes) {
-//   for (var i = 0; i < jokes.length; i++) {
-//     var addJoke = renderJoke(jokes[i].jokeData);
-//     $divAppendJokes.appendChild(addJoke);
-//   }
-// }
+function renderAllJokes(jokes) {
+  for (var i = 0; i < jokes.length; i++) {
+    var addJoke = renderJoke(jokes[i].jokeData);
+    $divAppendJokes.appendChild(addJoke);
+  }
+}
 
 function clickUnfavorite(event) {
   var $h5 = document.querySelectorAll('h5');
@@ -188,10 +188,17 @@ function clickUnfavorite(event) {
 //   }
 // }
 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 function handleInput(event) {
   // console.log(event.target.value);
   // debugger;
-  for (var i = 0; i < data.favJoke.length; i++) {
+  removeAllChildNodes($divAppendJokes);
+  for (var i = data.favJoke.length - 1; i >= 0; i--) {
     if (data.favJoke[i].jokeData.includes(event.target.value)) {
       renderJoke(data.favJoke[i].jokeData);
     }
@@ -205,4 +212,4 @@ $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
 $container.addEventListener('click', addJokeData);
 
-// window.addEventListener('DOMContentLoaded', renderAllJokes(data.favJoke));
+window.addEventListener('DOMContentLoaded', renderAllJokes(data.favJoke));
