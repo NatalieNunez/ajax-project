@@ -73,10 +73,8 @@ function getDataForView(dataView) {
 }
 
 function buttonClicks(event) {
-  if (event.target.classList.contains('favs') || event.target === $search) {
-    return;
-  }
-  if (event.target.classList.contains('likes')) {
+  if (event.target.classList.contains('favs') || event.target === $search ||
+  event.target.classList.contains('likes')) {
     return;
   }
 
@@ -94,8 +92,6 @@ function buttonClicks(event) {
   getDataForView(currentView);
 }
 
-var $h2Elements = document.querySelectorAll('.text');
-
 function clickFavorites(event) {
   if (!event.target.classList.contains('favs')) {
     return;
@@ -110,6 +106,8 @@ function clickFavorites(event) {
     $progStar2.classList.toggle('gold-star');
   }
 }
+
+var $h2Elements = document.querySelectorAll('.text');
 
 function addJokeData(event) {
   if (!event.target.classList.contains('favs')) {
@@ -171,23 +169,6 @@ function clickUnfavorite(event) {
   }
 }
 
-// function handleInput(event) {
-//   // console.log('event target value:', event.target.value);
-//   var $h5 = document.querySelectorAll('h5');
-//   for (var i = 0; i < $h5.length; i++) {
-//     // console.log('inner text:', $h5[i].innerText);
-//     if ($h5[i].innerText.includes(event.target.value)) {
-//       // console.log('text contains input value:', $h5[i]);
-//       $h5[i].classList.add('searched-joke');
-//     } else {
-//       $h5[i].classList.remove('searched-joke');
-//     }
-//     if (event.target.value === ' ' || event.target.value === '') {
-//       $h5[i].classList.remove('searched-joke');
-//     }
-//   }
-// }
-
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
@@ -195,8 +176,6 @@ function removeAllChildNodes(parent) {
 }
 
 function handleInput(event) {
-  // console.log(event.target.value);
-  // debugger;
   removeAllChildNodes($divAppendJokes);
   for (var i = data.favJoke.length - 1; i >= 0; i--) {
     if (data.favJoke[i].jokeData.includes(event.target.value)) {
@@ -206,7 +185,6 @@ function handleInput(event) {
 }
 
 $search.addEventListener('input', handleInput);
-
 $divAppendJokes.addEventListener('click', clickUnfavorite);
 $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
