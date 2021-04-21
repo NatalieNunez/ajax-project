@@ -73,10 +73,8 @@ function getDataForView(dataView) {
 }
 
 function buttonClicks(event) {
-  if (event.target.classList.contains('favs') || event.target === $search) {
-    return;
-  }
-  if (event.target.classList.contains('likes')) {
+  if (event.target.classList.contains('favs') || event.target === $search ||
+  event.target.classList.contains('likes')) {
     return;
   }
 
@@ -94,8 +92,6 @@ function buttonClicks(event) {
   getDataForView(currentView);
 }
 
-var $h2Elements = document.querySelectorAll('.text');
-
 function clickFavorites(event) {
   if (!event.target.classList.contains('favs')) {
     return;
@@ -110,6 +106,8 @@ function clickFavorites(event) {
     $progStar2.classList.toggle('gold-star');
   }
 }
+
+var $h2Elements = document.querySelectorAll('.text');
 
 function addJokeData(event) {
   if (!event.target.classList.contains('favs')) {
@@ -159,6 +157,7 @@ function renderAllJokes(jokes) {
     $divAppendJokes.appendChild(addJoke);
   }
 }
+
 function clickUnfavorite(event) {
   var $h5 = document.querySelectorAll('h5');
   var $likes = document.querySelectorAll('.likes');
@@ -169,8 +168,24 @@ function clickUnfavorite(event) {
     }
   }
 }
-$divAppendJokes.addEventListener('click', clickUnfavorite);
 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
+function handleInput(event) {
+  removeAllChildNodes($divAppendJokes);
+  for (var i = data.favJoke.length - 1; i >= 0; i--) {
+    if (data.favJoke[i].jokeData.includes(event.target.value)) {
+      renderJoke(data.favJoke[i].jokeData);
+    }
+  }
+}
+
+$search.addEventListener('input', handleInput);
+$divAppendJokes.addEventListener('click', clickUnfavorite);
 $container.addEventListener('click', buttonClicks);
 $container.addEventListener('click', clickFavorites);
 $container.addEventListener('click', addJokeData);
