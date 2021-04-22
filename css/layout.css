@@ -61,3 +61,50 @@
     margin: 0 auto 0 10%;
   }
 }
+
+@media only screen and (min-width: 400px) {
+  .row-home {
+    margin: 7rem 1rem;
+  }
+}
+
+@media only screen and (max-height: 414px) {
+  .row.footer {
+    display: none;
+  }
+
+  .nav {
+    position: absolute;
+    right: 20px;
+    top: 45px;
+    display: inline;
+  }
+
+  .row {
+    display: flex;
+    margin: 1.5rem;
+  }
+
+  a {
+    color: white;
+    font-size: 1rem;
+    font-family: sans-serif;
+    padding: 1rem;
+  }
+
+  h1 {
+    padding: 0;
+  }
+
+  h2 {
+    min-width: 450px;
+  }
+
+  .h2-home {
+    min-width: 250px;
+  }
+
+  .saved-jokes {
+    max-height: 14rem;
+  }
+}
