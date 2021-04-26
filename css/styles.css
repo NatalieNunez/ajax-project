@@ -29,6 +29,8 @@ h5 {
   margin: 1rem 1.5rem;
   border-bottom: 1px solid #bfbfbf;
   padding: 1rem;
+
+  /* overflow: auto; */
 }
 
 .jokes-gold {
