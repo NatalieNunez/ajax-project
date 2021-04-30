@@ -50,7 +50,7 @@ button {
   font-size: 1rem;
   outline: none;
   border: none;
-  width: 10rem;
+  width: 9rem;
   height: 5rem;
   border-radius: 5rem;
   box-shadow: 0 2px 5px #6d6c6c;
@@ -58,6 +58,7 @@ button {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  padding: 12px;
 }
 
 button:hover {
@@ -69,7 +70,7 @@ button:hover {
 .general-jokes-button,
 .tell-me-general,
 .another-general {
-  background-color: #dfd7ab;
+  background-color: #d2c99c;
 }
 
 .programming-jokes-button,
@@ -133,7 +134,7 @@ i:hover {
 }
 
 .saved-jokes {
-  height: 27rem;
+  height: 24rem;
   background-color: white;
   padding: 1rem 0;
   border-radius: 0.5rem;
