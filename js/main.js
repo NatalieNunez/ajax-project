@@ -72,10 +72,15 @@ function getDataForView(dataView) {
   }
 }
 
+var $footer = document.querySelector('.footer');
+
 function buttonClicks(event) {
-  if (event.target.classList.contains('favs') || event.target === $search ||
-  event.target.classList.contains('likes')) {
-    return;
+  if (event.target.tagName !== 'A') {
+    if (event.target.tagName !== 'BUTTON') {
+      if (!$footer.contains(event.target)) {
+        return;
+      }
+    }
   }
 
   var currentButton = event.target.dataset.view;
@@ -161,6 +166,9 @@ function renderAllJokes(jokes) {
 function clickUnfavorite(event) {
   var $h5 = document.querySelectorAll('h5');
   var $likes = document.querySelectorAll('.likes');
+  if (!event.target.classList.contains('likes')) {
+    return;
+  }
   for (var i = 0; i < $likes.length; i++) {
     if (event.target === $likes[i]) {
       $h5[i].remove();
