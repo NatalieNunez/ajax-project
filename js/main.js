@@ -185,8 +185,10 @@ function removeAllChildNodes(parent) {
 
 function handleInput(event) {
   removeAllChildNodes($divAppendJokes);
+  const lowercaseInput = event.target.value.toLowerCase();
   for (var i = data.favJoke.length - 1; i >= 0; i--) {
-    if (data.favJoke[i].jokeData.includes(event.target.value)) {
+    const lowercaseJokeData = data.favJoke[i].jokeData.toLowerCase();
+    if (lowercaseJokeData.includes(lowercaseInput)) {
       renderJoke(data.favJoke[i].jokeData);
     }
   }
