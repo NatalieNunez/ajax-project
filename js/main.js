@@ -75,12 +75,8 @@ function getDataForView(dataView) {
 var $footer = document.querySelector('.footer');
 
 function buttonClicks(event) {
-  if (event.target.tagName !== 'A') {
-    if (event.target.tagName !== 'BUTTON') {
-      if (!$footer.contains(event.target)) {
-        return;
-      }
-    }
+  if (event.target.tagName !== 'A' && event.target.tagName !== 'BUTTON' && !$footer.contains(event.target)) {
+    return;
   }
 
   if (event.target.tagName === 'DIV') {
