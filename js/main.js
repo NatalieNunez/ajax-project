@@ -72,9 +72,14 @@ function getDataForView(dataView) {
   }
 }
 
+var $footer = document.querySelector('.footer');
+
 function buttonClicks(event) {
-  if (event.target.classList.contains('favs') || event.target === $search ||
-  event.target.classList.contains('likes')) {
+  if (event.target.tagName !== 'A' && event.target.tagName !== 'BUTTON' && !$footer.contains(event.target)) {
+    return;
+  }
+
+  if (event.target.tagName === 'DIV') {
     return;
   }
 
@@ -161,6 +166,9 @@ function renderAllJokes(jokes) {
 function clickUnfavorite(event) {
   var $h5 = document.querySelectorAll('h5');
   var $likes = document.querySelectorAll('.likes');
+  if (!event.target.classList.contains('likes')) {
+    return;
+  }
   for (var i = 0; i < $likes.length; i++) {
     if (event.target === $likes[i]) {
       $h5[i].remove();
@@ -177,8 +185,10 @@ function removeAllChildNodes(parent) {
 
 function handleInput(event) {
   removeAllChildNodes($divAppendJokes);
+  const lowercaseInput = event.target.value.toLowerCase();
   for (var i = data.favJoke.length - 1; i >= 0; i--) {
-    if (data.favJoke[i].jokeData.includes(event.target.value)) {
+    const lowercaseJokeData = data.favJoke[i].jokeData.toLowerCase();
+    if (lowercaseJokeData.includes(lowercaseInput)) {
       renderJoke(data.favJoke[i].jokeData);
     }
   }

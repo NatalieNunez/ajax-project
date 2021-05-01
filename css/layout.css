@@ -17,7 +17,7 @@
 
 .row {
   display: flex;
-  margin: 4rem 6%;
+  margin: 4rem;
 }
 
 .row-fav {
@@ -98,6 +98,7 @@
 
   h2 {
     min-width: 450px;
+    max-height: 60px;
   }
 
   .h2-home {
@@ -105,6 +106,30 @@
   }
 
   .saved-jokes {
-    max-height: 14rem;
+    max-height: 10rem;
+  }
+}
+
+@media only screen and (min-height: 1024px) {
+  .row {
+    display: flex;
+    margin: 6rem 4rem;
+  }
+}
+
+@media only screen and (max-height: 726px) {
+  .row {
+    display: flex;
+    margin: 2rem;
+  }
+
+  .saved-jokes {
+    max-height: 20rem;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .saved-jokes {
+    max-height: 15rem;
   }
 }
