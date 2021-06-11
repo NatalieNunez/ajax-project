@@ -9,7 +9,8 @@ A dynamic HTML, CSS, and JavaScript solo project.
 * CSS3
 
 ## Live Demo
-[Crackin' Jokes](https://natalienunez.github.io/ajax-project/)
+
+<a href="https://natalienunez.github.io/ajax-project/" target="_blank">Crackin' Jokes</a>
 
 ## Features
 
