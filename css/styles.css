@@ -4,6 +4,11 @@ body {
 
 .top-nav {
   background-color: #ffc6b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  position: relative;
 }
 
 h1 {
@@ -11,17 +16,18 @@ h1 {
   font-family: 'PT Mono', monospace;
   text-align: center;
   text-shadow: 0 3px 2px #c79f9f;
-  padding: 1rem 0;
   font-weight: 100;
+  font-size: 5vh;
 }
 
 h2 {
   font-family: 'Montserrat', sans-serif;
   margin: 0 auto;
-  max-width: 250px;
+  max-width: 35vh;
+  font-size: 3.5vh;
   text-align: center;
   font-weight: 100;
-  height: 100px;
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,6 +36,7 @@ h2 {
 h5 {
   font-family: sans-serif;
   font-weight: 300;
+  font-size: 2vh;
   margin: 1rem 1.5rem;
   border-bottom: 1px solid #bfbfbf;
   padding: 1rem;
@@ -47,25 +54,26 @@ h5 {
 
 button {
   color: white;
-  font-size: 1rem;
+  font-size: 1.8vh;
   outline: none;
   border: none;
-  width: 9rem;
-  height: 5rem;
-  border-radius: 5rem;
+  width: 18vh;
+  height: 12vh;
+  border-radius: 7vh;
   box-shadow: 0 2px 5px #6d6c6c;
-  display: flex;
+
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  padding: 12px;
+  align-items: center; */
+  margin: 5vh 2vh;
+  padding: 2vh;
 }
 
-button:hover {
-  width: 10.2rem;
-  height: 5.2rem;
-  font-size: 1.2rem;
-}
+/* button:hover {
+  width: 18.5vh;
+  height: 12.5vh;
+  font-size: 2vh;
+} */
 
 .general-jokes-button,
 .tell-me-general,
@@ -73,10 +81,22 @@ button:hover {
   background-color: #d2c99c;
 }
 
+.general-jokes-button:hover,
+.tell-me-general:hover,
+.another-general:hover {
+  background-color: #c4b76d;
+}
+
 .programming-jokes-button,
 .tell-me-programming,
 .another-programming {
   background-color: #74bdcb;
+}
+
+.programming-jokes-button:hover,
+.tell-me-programming:hover,
+.another-programming:hover {
+  background-color: #51b0c4;
 }
 
 .fav-joke {
@@ -87,7 +107,7 @@ button:hover {
   position: fixed;
   bottom: 0;
   background-color: white;
-  height: 6rem;
+  height: 12vh;
   width: 100%;
   margin: 0;
 }
@@ -100,16 +120,11 @@ a:hover {
 i {
   margin: auto;
   color: #c3c2c2;
-  font-size: 1.7rem;
+  font-size: 3vh;
   cursor: pointer;
 }
 
-i.fa-home {
-  margin-right: 3.5rem;
-}
-
 i.fa-star {
-  margin-left: 3.5rem;
   display: flex;
   justify-content: flex-end;
 }
@@ -129,14 +144,14 @@ i:hover {
 .likes {
   display: flex;
   justify-content: flex-end;
-  font-size: 1rem;
+  font-size: 2.2vh;
   color: #e2cf71;
 }
 
 .saved-jokes {
-  height: 24rem;
+  height: 60vh;
   background-color: white;
-  padding: 1rem 0;
+  padding: 3vh 0.5vh;
   border-radius: 0.5rem;
   overflow: auto;
 }
@@ -147,8 +162,15 @@ i:hover {
   border-radius: 0.5rem;
   padding: 0.4rem 0.7rem;
   outline: none;
+  width: 40%;
+  height: 3vh;
+  font-size: 2vh;
 }
 
 #search::placeholder {
   color: #a8a8a8;
+}
+
+.h2-home {
+  color: #6d6c6c;
 }

@@ -16,8 +16,9 @@
 }
 
 .row {
+  margin: 6vh 2vh;
   display: flex;
-  margin: 4rem;
+  justify-content: space-evenly;
 }
 
 .row-fav {
@@ -27,30 +28,36 @@
 
 .col-full {
   flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.col-save,
+.col-joke {
+  flex-basis: 100%;
 }
 
 .col-half {
   display: flex;
-  flex-basis: 50%;
 }
 
-@media only screen and (min-width: 864px) {
+@media only screen and (min-width: 900px) {
   .row.footer {
     display: none;
   }
 
   .nav {
     position: absolute;
-    right: 20px;
-    top: 40px;
+    right: 2vh;
+    top: 6vh;
     display: inline;
   }
 
   a {
     color: white;
-    font-size: 1.2rem;
+    font-size: 2vh;
     font-family: sans-serif;
-    padding: 1rem;
+    padding: 1.5vh;
   }
 
   .general-jokes-button {
@@ -64,41 +71,18 @@
 
 @media only screen and (min-width: 400px) {
   .row-home {
-    margin: 7rem 1rem;
+    margin: 10vh;
   }
 }
 
 @media only screen and (max-height: 414px) {
-  .row.footer {
-    display: none;
-  }
-
-  .nav {
-    position: absolute;
-    right: 20px;
-    top: 45px;
-    display: inline;
-  }
-
   .row {
     display: flex;
     margin: 1.5rem;
   }
 
-  a {
-    color: white;
-    font-size: 1rem;
-    font-family: sans-serif;
-    padding: 1rem;
-  }
-
   h1 {
     padding: 0;
-  }
-
-  h2 {
-    min-width: 450px;
-    max-height: 60px;
   }
 
   .h2-home {
@@ -113,14 +97,12 @@
 @media only screen and (min-height: 1024px) {
   .row {
     display: flex;
-    margin: 6rem 4rem;
   }
 }
 
 @media only screen and (max-height: 726px) {
   .row {
     display: flex;
-    margin: 2rem;
   }
 
   .saved-jokes {
