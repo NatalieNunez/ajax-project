@@ -10,7 +10,7 @@ A dynamic HTML, CSS, and JavaScript solo project.
 
 ## Live Demo
 
-<a href="https://natalienunez.github.io/ajax-project/" target="blank">Crackin' Jokes</a>
+<a href="https://natalienunez.github.io/ajax-project/" target="_blank" rel="noopener noreferrer">Crackin' Jokes</a>
 
 ## Features
 
