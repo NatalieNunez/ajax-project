@@ -88,10 +88,6 @@
   .h2-home {
     min-width: 250px;
   }
-
-  .saved-jokes {
-    max-height: 10rem;
-  }
 }
 
 @media only screen and (min-height: 1024px) {
@@ -103,15 +99,5 @@
 @media only screen and (max-height: 726px) {
   .row {
     display: flex;
-  }
-
-  .saved-jokes {
-    max-height: 20rem;
-  }
-}
-
-@media only screen and (max-height: 600px) {
-  .saved-jokes {
-    max-height: 15rem;
   }
 }
