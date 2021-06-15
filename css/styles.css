@@ -36,7 +36,7 @@ h2 {
 h5 {
   font-family: sans-serif;
   font-weight: 300;
-  font-size: 2vh;
+  font-size: 2vmax;
   margin: 1rem;
   border-bottom: 1px solid #bfbfbf;
   padding: 0.5rem;
@@ -61,8 +61,10 @@ button {
   height: 12vh;
   border-radius: 7vh;
   box-shadow: 0 2px 5px #6d6c6c;
+  text-shadow: 0 1px 3px #787878;
   margin: 5vh 2vh;
   padding: 2vh;
+  cursor: pointer;
 }
 
 .general-jokes-button,
@@ -150,12 +152,12 @@ i:hover {
 #search {
   background-color: #e2e2e2;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 1vmax;
   padding: 0.4rem 0.7rem;
   outline: none;
   width: 40%;
-  height: 3vh;
-  font-size: 2vh;
+  height: 3vmax;
+  font-size: 2vmax;
 }
 
 #search::placeholder {

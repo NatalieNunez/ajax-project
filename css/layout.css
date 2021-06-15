@@ -27,7 +27,7 @@
 }
 
 .col-full {
-  flex-basis: 100%;
+  flex-basis: 95%;
   display: flex;
   justify-content: center;
 }
@@ -58,6 +58,8 @@
     font-size: 2vh;
     font-family: sans-serif;
     padding: 1.5vh;
+    text-shadow: 0 1px 3px #787878;
+    cursor: pointer;
   }
 
   .general-jokes-button {
@@ -71,14 +73,27 @@
 
 @media only screen and (min-width: 400px) {
   .row-home {
-    margin: 10vh;
+    margin: 10vh auto;
+    max-width: 800px;
+  }
+}
+
+@media only screen and (min-width: 568px) {
+  .row-home {
+    max-width: 300px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .row-home {
+    max-width: 400px;
   }
 }
 
 @media only screen and (max-height: 414px) {
   .row {
     display: flex;
-    margin: 1.5rem;
+    margin: 1.5rem auto;
   }
 
   h1 {
