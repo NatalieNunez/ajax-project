@@ -5,6 +5,20 @@ var $h2ProgrammingSetup = document.getElementById('append-prog-joke');
 var $h2ProgrammingPunchline = document.getElementById('append-prog-punchline');
 var $search = document.getElementById('search');
 
+function checkFavorites(joke) {
+  for (var i = 0; i < data.favJoke.length; i++) {
+    if (data.favJoke[i].jokeData === joke) {
+      return true;
+    }
+  }
+  return false;
+}
+
+var $genStar = document.getElementById('gen-star');
+var $progStar = document.getElementById('prog-star');
+var $genStar2 = document.getElementById('gen-star-2');
+var $progStar2 = document.getElementById('prog-star-2');
+
 function programmingJokes() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://official-joke-api.appspot.com/jokes/programming/random');
@@ -17,6 +31,11 @@ function programmingJokes() {
     var strPunchlineProg = xhr.response[0].punchline;
     var progPunchline = document.createTextNode(strPunchlineProg);
     $h2ProgrammingPunchline.appendChild(progPunchline);
+    var fullJoke = `${strJokeProg} ${strPunchlineProg}`;
+    if (checkFavorites(fullJoke)) {
+      $progStar.classList.add('gold-star');
+      $progStar2.classList.add('gold-star');
+    }
   });
   xhr.send();
 }
@@ -41,11 +60,6 @@ var $views = document.querySelectorAll('.view');
 var $container = document.querySelector('.container');
 var $mainHead = document.getElementById('main-header');
 var $favHead = document.getElementById('fav-header');
-
-var $genStar = document.getElementById('gen-star');
-var $progStar = document.getElementById('prog-star');
-var $genStar2 = document.getElementById('gen-star-2');
-var $progStar2 = document.getElementById('prog-star-2');
 
 function getDataForView(dataView) {
   if (dataView === 'general-setup') {
