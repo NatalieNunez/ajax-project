@@ -152,12 +152,12 @@ i:hover {
 #search {
   background-color: #e2e2e2;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 1vmax;
   padding: 0.4rem 0.7rem;
   outline: none;
   width: 40%;
-  height: 3vh;
-  font-size: 2vh;
+  height: 3vmax;
+  font-size: 2vmax;
 }
 
 #search::placeholder {
