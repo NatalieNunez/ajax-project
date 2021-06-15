@@ -115,7 +115,6 @@ function clickFavorites(event) {
   if (!event.target.classList.contains('favs')) {
     return;
   }
-
   if (event.target === $genStar || event.target === $genStar2) {
     $genStar.classList.toggle('gold-star');
     $genStar2.classList.toggle('gold-star');
@@ -152,8 +151,12 @@ function addJokeData(event) {
     data.favJoke.unshift({ jokeData });
     renderJoke(jokeData);
   } else {
-    data.favJoke.shift();
-    $divAppendJokes.removeChild($divAppendJokes.childNodes[0]);
+    for (var i = 0; i < data.favJoke.length; i++) {
+      if (data.favJoke[i].jokeData === jokeData) {
+        data.favJoke.splice(i, 1);
+      }
+    }
+    renderAllJokes(data.favJoke);
   }
 }
 
@@ -171,6 +174,7 @@ function renderJoke(joke) {
 }
 
 function renderAllJokes(jokes) {
+  removeAllChildNodes($divAppendJokes);
   for (var i = 0; i < jokes.length; i++) {
     var addJoke = renderJoke(jokes[i].jokeData);
     $divAppendJokes.appendChild(addJoke);
