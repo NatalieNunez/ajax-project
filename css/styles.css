@@ -61,8 +61,10 @@ button {
   height: 12vh;
   border-radius: 7vh;
   box-shadow: 0 2px 5px #6d6c6c;
+  text-shadow: 0 1px 3px #787878;
   margin: 5vh 2vh;
   padding: 2vh;
+  cursor: pointer;
 }
 
 .general-jokes-button,
