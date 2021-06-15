@@ -27,7 +27,7 @@
 }
 
 .col-full {
-  flex-basis: 100%;
+  flex-basis: 95%;
   display: flex;
   justify-content: center;
 }
