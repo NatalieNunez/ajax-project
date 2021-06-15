@@ -36,7 +36,7 @@ h2 {
 h5 {
   font-family: sans-serif;
   font-weight: 300;
-  font-size: 2vh;
+  font-size: 2vmax;
   margin: 1rem;
   border-bottom: 1px solid #bfbfbf;
   padding: 0.5rem;
