@@ -18,12 +18,26 @@ var $genStar = document.getElementById('gen-star');
 var $progStar = document.getElementById('prog-star');
 var $genStar2 = document.getElementById('gen-star-2');
 var $progStar2 = document.getElementById('prog-star-2');
+// const $errorMessage
 
 function programmingJokes() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://official-joke-api.appspot.com/jokes/programming/random');
   xhr.responseType = 'json';
+  xhr.onerror = () => {
+    showErrorMessage();
+    // showSpinner();
+    // console.log('an error occured');
+  };
+  // xhr.onprogress = () => {
+  //   console.log('loading');
+  //   showSpinner();
+  // };
+  // xhr.onreadystatechange = () => {
+
+  // };
   xhr.addEventListener('load', function () {
+    // hideSpinner();
     var strJokeProg = xhr.response[0].setup;
     var progJoke = document.createTextNode(strJokeProg);
     $h2ProgrammingSetup.appendChild(progJoke);
@@ -44,6 +58,11 @@ function generalJokes() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://official-joke-api.appspot.com/random_joke');
   xhr.responseType = 'json';
+  xhr.onerror = () => {
+    showErrorMessage();
+    // showSpinner();
+    // console.log('an error occured');
+  };
   xhr.addEventListener('load', function () {
     var strJokeGeneral = xhr.response.setup;
     var genJoke = document.createTextNode(strJokeGeneral);
@@ -55,6 +74,33 @@ function generalJokes() {
   });
   xhr.send();
 }
+
+// const $loadingSpinner = document.querySelector('.loader');
+const $errorMessage = document.querySelector('.error-message');
+
+// $h2GeneralSetup.append($loadingSpinner);
+// window.on('load', function () {
+//   setTimeout(removeLoader, 2000);
+// });
+// function removeLoader() {
+//   $loadingSpinner.fadeOut(500, function () {
+//     $loadingSpinner.remove();
+//   });
+// }
+
+// function showSpinner() {
+//   $loadingSpinner.classList.remove('hidden');
+//   $h2ProgrammingSetup.appendChild($loadingSpinner);
+// }
+
+function showErrorMessage() {
+  $errorMessage.classList.remove('hidden');
+  $h2ProgrammingSetup.appendChild($errorMessage);
+}
+
+// function hideSpinner() {
+//   $loadingSpinner.classList.add('hidden');
+// }
 
 var $views = document.querySelectorAll('.view');
 var $container = document.querySelector('.container');
@@ -68,6 +114,7 @@ function getDataForView(dataView) {
     $h2GeneralSetup.textContent = '';
     $h2GeneralPunchline.textContent = '';
     generalJokes();
+    // showSpinner();
   }
   if (dataView === 'programming-setup') {
     $progStar.classList.remove('gold-star');
@@ -84,6 +131,7 @@ function getDataForView(dataView) {
     $mainHead.classList.remove('hidden');
     $favHead.classList.add('hidden');
   }
+  // hideSpinner();
 }
 
 var $footer = document.querySelector('.footer');
@@ -107,7 +155,7 @@ function buttonClicks(event) {
       $views[i].classList.add('hidden');
     }
   }
-
+  // showSpinner();
   getDataForView(currentView);
 }
 
