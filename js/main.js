@@ -95,7 +95,11 @@ const $errorMessage = document.querySelector('.error-message');
 
 function showErrorMessage() {
   $errorMessage.classList.remove('hidden');
-  $h2ProgrammingSetup.appendChild($errorMessage);
+  // $h2ProgrammingSetup.appendChild($errorMessage);
+  // $h2ProgrammingPunchline.appendChild($errorMessage);
+  // $h2GeneralSetup.appendChild($errorMessage);
+  // $h2GeneralPunchline.appendChild($errorMessage);
+
 }
 
 // function hideSpinner() {
