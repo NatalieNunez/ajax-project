@@ -25,7 +25,8 @@ function programmingJokes() {
   xhr.open('GET', 'https://official-joke-api.appspot.com/jokes/programming/random');
   xhr.responseType = 'json';
   xhr.onerror = () => {
-    showSpinner();
+    showErrorMessage();
+    // showSpinner();
     // console.log('an error occured');
   };
   // xhr.onprogress = () => {
@@ -57,6 +58,11 @@ function generalJokes() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://official-joke-api.appspot.com/random_joke');
   xhr.responseType = 'json';
+  xhr.onerror = () => {
+    showErrorMessage();
+    // showSpinner();
+    // console.log('an error occured');
+  };
   xhr.addEventListener('load', function () {
     var strJokeGeneral = xhr.response.setup;
     var genJoke = document.createTextNode(strJokeGeneral);
@@ -69,7 +75,8 @@ function generalJokes() {
   xhr.send();
 }
 
-const $loadingSpinner = document.querySelector('.loader');
+// const $loadingSpinner = document.querySelector('.loader');
+const $errorMessage = document.querySelector('.error-message');
 
 // $h2GeneralSetup.append($loadingSpinner);
 // window.on('load', function () {
@@ -81,9 +88,14 @@ const $loadingSpinner = document.querySelector('.loader');
 //   });
 // }
 
-function showSpinner() {
-  $loadingSpinner.classList.remove('hidden');
-  $h2ProgrammingSetup.appendChild($loadingSpinner);
+// function showSpinner() {
+//   $loadingSpinner.classList.remove('hidden');
+//   $h2ProgrammingSetup.appendChild($loadingSpinner);
+// }
+
+function showErrorMessage() {
+  $errorMessage.classList.remove('hidden');
+  $h2ProgrammingSetup.appendChild($errorMessage);
 }
 
 // function hideSpinner() {
