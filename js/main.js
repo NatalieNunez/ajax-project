@@ -25,6 +25,7 @@ function programmingJokes() {
   xhr.open('GET', 'https://official-joke-api.appspot.com/jokes/programming/random');
   xhr.responseType = 'json';
   xhr.onerror = () => {
+    showSpinner();
     // console.log('an error occured');
   };
   // xhr.onprogress = () => {
@@ -68,7 +69,7 @@ function generalJokes() {
   xhr.send();
 }
 
-// const $loadingSpinner = document.querySelector('.loader');
+const $loadingSpinner = document.querySelector('.loader');
 
 // $h2GeneralSetup.append($loadingSpinner);
 // window.on('load', function () {
@@ -80,9 +81,10 @@ function generalJokes() {
 //   });
 // }
 
-// function showSpinner() {
-//   $loadingSpinner.classList.remove('hidden');
-// }
+function showSpinner() {
+  $loadingSpinner.classList.remove('hidden');
+  $h2ProgrammingSetup.appendChild($loadingSpinner);
+}
 
 // function hideSpinner() {
 //   $loadingSpinner.classList.add('hidden');
